@@ -32,7 +32,7 @@ El frontend consume una API backend en:
 
 ### Ejecución del backend
 1. Abre una terminal en la carpeta:
-   `Back end/FrontEnd-Backend-ClubDeportivo-main/FrontEnd-Backend-ClubDeportivo-main`
+   `Back end/FrontEnd-Backend-ClubDeportivo-main/FrontEnd-Backend-ClubDeportivo-main` si son 2 veces entrar a FrontEnd-Backend-ClubDeportivo-main preferi mantenerlo para que no se rompa la logica de nada del proyecto
 2. Ejecuta:
    `npm install`
 3. Ejecuta:
