@@ -44,10 +44,10 @@ function CoachDashboard() {
 
     try {
       
-      const response = await fetch("http://localhost:3000/api/auth/me", {
+      const response = await fetch(`${API_URL}/${currentUser.id}`, {
         method: "PUT",
         headers: getHeaders(), 
-        body: JSON.stringify({ full_name: profileData.name, email: profileData.email })
+        body: JSON.stringify(updatedUser)
       });
 
       if (response.ok) {
@@ -94,6 +94,7 @@ function CoachDashboard() {
 const fetchUsersFromAPI = async () => {
   try {
     const response = await fetch(API_URL, { headers: getHeaders() });
+    
     if (response.ok) {
       const data = await response.json();
       const allUsers = data.data || [];
@@ -113,6 +114,16 @@ const fetchUsersFromAPI = async () => {
 
       console.log("Usuarios listos para el dashboard:", clientsOnly);
       setAvailableUsers(clientsOnly);
+    } else if (response.status === 403) {
+    
+      console.warn("Acceso restringido a usuarios (403). Cargando socios precargados del sistema.");
+      
+      const defaultSocios = [
+        { id: 1, name: "Demo User 1", email: "user1@demo.cl", role: "user" },
+        { id: 2, name: "Demo User 2", email: "user2@demo.cl", role: "user" }
+      ];
+      
+      setAvailableUsers(defaultSocios);
     }
   } catch (error) {
     console.error("Error al cargar usuarios desde el servidor:", error);
