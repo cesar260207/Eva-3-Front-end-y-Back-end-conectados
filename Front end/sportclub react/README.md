@@ -1,5 +1,8 @@
 # SportClub React
 
+
+⚠️ **NOTA IMPORTANTE PARA LA EVALUACIÓN:** Este proyecto cuenta con una arquitectura dividida en Frontend y Backend. Por esta razón, **NO debe evaluarse a través de GitHub Pages**, ya que las plataformas de páginas estáticas no pueden ejecutar el servidor Node.js. Para revisar la aplicación, por favor siga las instrucciones de instalación local detalladas más abajo.
+
 Aplicación frontend React para el proyecto SportClub, con autenticación, control de acceso por roles, dashboards diferenciados y módulo administrativo CRUD.
 
 ## Integrantes
